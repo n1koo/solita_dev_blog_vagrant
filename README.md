@@ -20,9 +20,11 @@ To start the box run:
 
 	vagrant up
 
+You can reach the blog from the host machine at http://localhost:4000
+
 ## TODO
 
-
+- Figure out why Vagrant doesn't load login shell although it claims
 
 ## License
 
