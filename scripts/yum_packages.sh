@@ -3,7 +3,7 @@
 packages="${@}";
 
 if [ -n "$packages" ]; then
-    yum update;
+    yum -y update;
     yum install -y $packages;
 fi;
 

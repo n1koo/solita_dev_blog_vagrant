@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+BLOG_PATH = "../solita.github.com/"
+
 Vagrant.configure("2") do |config|
 
     nodes = {
@@ -16,7 +19,7 @@ Vagrant.configure("2") do |config|
 
             node_config.vm.network :private_network, ip: node_opts[:ip]
             node_config.vm.network :forwarded_port, host: 4000, guest: 4000
-            config.vm.synced_folder "solita.github.com", "~/Documents/solita.github.com"
+            config.vm.synced_folder "#{BLOG_PATH}", "/home/vagrant/solita.github.com/"
 
             node_config.vm.provider "virtualbox" do |v|
                 v.gui = false
