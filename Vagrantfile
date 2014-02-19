@@ -7,7 +7,7 @@ BLOG_PATH = "../solita.github.com/"
 Vagrant.configure("2") do |config|
 
     nodes = {
-        'dev-blog' => { :ip  => '10.30.30.10', :memory => 512, :cpu => 2 }
+        'dev-blog' => { :ip  => '10.30.30.10', :memory => 512, :cpu => 1 }
     }
 
     nodes.each do |node_name, node_opts|
@@ -30,11 +30,11 @@ Vagrant.configure("2") do |config|
                     v.customize(modifyvm_args)
                 end
             end
-
+            
             config.vm.provision :shell, :path => "scripts/yum_packages.sh",  :args => "git nano python2.7"
-            config.vm.provision :shell, :path => "scripts/install-rvm.sh",  :args => "stable"
-            config.vm.provision :shell, :path => "scripts/install-ruby.sh", :args => "2.1.0"
-            config.vm.provision :shell, :path => "scripts/blog_setup.sh"
+            config.vm.provision :shell, :path => "scripts/install-rvm.sh",  :args => "stable", :privileged => false
+            config.vm.provision :shell, :path => "scripts/install-ruby.sh", :args => "2.1.0 bundler", :privileged => false
+            config.vm.provision :shell, :path => "scripts/blog_setup.sh", :privileged => false
         end
     end
 end

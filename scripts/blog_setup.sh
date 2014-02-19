@@ -1,6 +1,5 @@
 #!/bin/sh
-
-#git clone https://github.com/solita/solita.github.com
+source $HOME/.rvm/scripts/rvm
 cd solita.github.com
 gem install bundler
 bundle install
