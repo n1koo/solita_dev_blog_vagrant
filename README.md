@@ -12,6 +12,8 @@ Following setup:
 
 You will need [Virtualbox][1] and [Vagrant][2]
 
+solita.github.com repository is expected to be at ../solita.github.com (you can change it in the Vagrantfile)
+
 ## Running
 
 To start the box run:

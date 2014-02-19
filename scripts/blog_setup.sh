@@ -2,5 +2,6 @@
 
 #git clone https://github.com/solita/solita.github.com
 cd solita.github.com
-bundle exec install
+gem install bundler
+bundle install
 jekyll serve --watch
